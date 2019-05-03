@@ -1,4 +1,17 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+// Determine which transition event to listen for if supported
+var transitions = {
+	'transition':'transitionend',
+	'OTransition':'oTransitionEnd',
+	'MSTransition':'msTransitionEnd',
+	'MozTransition':'transitionend',
+	'WebkitTransition':'webkitTransitionEnd'
+};
+window.transitionEvent = transitions[Modernizr.prefixed('transition')];
+
+
+
 const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 
@@ -17,6 +30,11 @@ recognition.addEventListener('result', e=>{
         var isnum = /^\d+$/.test(transcript[transcript.length-1]);
         console.log(transcript[transcript.length-1])
         console.log(isnum);
+        var pagenum =  transcript[transcript.length-1];
+        console.log(pagenum)
+
+        new_page = document.getElementsByClassName(pagenum)
+        book.appendChild()
     }
 });
    // console.log(transcript)   
