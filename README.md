@@ -1,3 +1,8 @@
+modifying brandon's webcam swiper by adding speech page turner
+
+
+
+
 WebcamSwiper
 ============
 
